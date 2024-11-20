@@ -43,7 +43,7 @@
                                 take++; // Increase the take count
                                 break;
                             }
-                            else
+                            else // If wrong applies the following:
                             {
                                 lives--; // Decrease lives when the answer is wrong
                                 take++; // Increase the take count
