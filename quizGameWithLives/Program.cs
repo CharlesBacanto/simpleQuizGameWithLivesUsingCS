@@ -12,9 +12,9 @@
         {
             
             //Array of Questions
-            string[] questions = { " 2*1 = ", " 2+2 = ", " 9-3 = " };
+            string[] questions = { " 2*1 = ", " 2+2 = ", " 9-3 = ", " 5+4 = ", " 7-4 = ", " 12+5 = ", " 6*5 = ", " 8/2= ", " 9+7 = " };
             //Array of Correct Answers
-            int[] correctAnswers = { 2, 4, 6 };
+            int[] correctAnswers = { 2, 4, 6, 9, 3, 17, 30, 4, 16 };
 
 
             //For loop to iterate Questions
