@@ -3,32 +3,62 @@
     static void Main(string[] args)
     {
         int lives = 3;
-        int correctAnswer = 2;
         int take = 1;
+        int points = 0;
+        bool correct = false;
         do
         {
-            Console.WriteLine("Lives: " + lives + "\n");
-            Console.Write("Take #"+take+" What is 1 + 1: ");
-            int answer = Convert.ToInt32(Console.ReadLine());
-
-            if(answer.Equals(correctAnswer))
-            {
-                Console.WriteLine("Your Answer is correct");
-                break;
-            }
-            else
-            {
-                lives--;
-            }
             
-            take++;
 
-            if (lives == 0)
+            //Array of Questions
+            string[] questions = { "2*1", "2+2", "9-3" };
+            //Array of Correct Answers
+            int[] correctAnswers = { 2, 4, 6 };
+
+
+            //For loop to iterate Questions
+            for (int i = 0; i < questions.Length;)
             {
-                Console.WriteLine("You failed");
-            }
+                for (int j = 0; j < correctAnswers.Length;)
+                {
+                    if (lives > 0)
+                    {
+                        do
+                        {
+                            Console.Write("Lives: " + lives);
+                            Console.WriteLine("          Points: " + points + "\n");
+                            Console.Write(questions[i]);
+                            int answer = Convert.ToInt32(Console.ReadLine());
 
+                            if (answer.Equals(correctAnswers[j]))
+                            {
+                                correct = true;
+                                points++;
+                                break;
+                            }
+                            else
+                            {
+                                lives--;
+                                if (lives == 0)
+                                {
+                                    correct = true;
+                                    Console.WriteLine("You failed");
+                                }
+                            }
+
+                        }
+                        while (correct == false);
+                        i++;
+                        j++;
+                    }
+                }
+            }
         }
         while (lives > 0);
+
+
+        
     }
+
+
 }
